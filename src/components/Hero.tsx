@@ -10,17 +10,17 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/10 border border-foreground/20 text-sm text-foreground">
             <Zap className="w-4 h-4" />
             <span>Premium Gaming Infrastructure</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-gradient-shift bg-[length:200%_auto]">
+            <span className="text-foreground">
               Power Your Game
             </span>
             <br />
-            <span className="text-foreground">With StrengthCloud</span>
+            <span className="text-foreground border-b-4 border-foreground">With StrengthCloud</span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ const Hero = () => {
             <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity group shadow-lg hover:shadow-primary/50"
+                className="bg-foreground text-background hover:bg-foreground/90 transition-all group shadow-xl hover:shadow-foreground/20"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -42,7 +42,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-primary/50 hover:border-primary hover:bg-primary/10"
+                className="border-foreground/20 hover:border-foreground hover:bg-foreground/10"
               >
                 View Pricing
               </Button>
@@ -52,15 +52,15 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12">
             <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-primary">99.9%</div>
+              <div className="text-3xl md:text-4xl font-bold text-foreground">99.9%</div>
               <div className="text-sm text-muted-foreground">Uptime</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-secondary">24/7</div>
+              <div className="text-3xl md:text-4xl font-bold text-foreground">24/7</div>
               <div className="text-sm text-muted-foreground">Support</div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-accent">DDoS</div>
+              <div className="text-3xl md:text-4xl font-bold text-foreground">DDoS</div>
               <div className="text-sm text-muted-foreground">Protected</div>
             </div>
           </div>

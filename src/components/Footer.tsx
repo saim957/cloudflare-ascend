@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <img src={logo} alt="StrengthCloud" className="h-8 w-8 rounded-lg" />
-              <span className="text-lg font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-lg font-bold text-foreground">
                 StrengthCloud
               </span>
             </div>
@@ -32,6 +32,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Discord</a></li>
               <li><a href="https://gp.strengthcloud.fun/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Panel</a></li>
+              <li><a href="https://status.strengthcloud.fun/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Status</a></li>
               <li><Link to="/auth" className="hover:text-foreground transition-colors">Login</Link></li>
             </ul>
           </div>

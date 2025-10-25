@@ -88,7 +88,7 @@ const Auth = () => {
       <Card className="w-full max-w-md p-8 bg-card/80 backdrop-blur-xl border-border relative z-10 animate-scale-in">
         <Link to="/" className="flex items-center justify-center gap-2 mb-8">
           <img src={logo} alt="StrengthCloud" className="h-12 w-12 rounded-lg" />
-          <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+          <span className="text-2xl font-bold text-foreground">
             StrengthCloud
           </span>
         </Link>
@@ -132,7 +132,7 @@ const Auth = () => {
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90"
+            className="w-full bg-foreground text-background hover:bg-foreground/90"
             disabled={loading}
           >
             {loading ? (
@@ -149,7 +149,7 @@ const Auth = () => {
         <div className="mt-6 text-center text-sm">
           <button
             onClick={() => setIsLogin(!isLogin)}
-            className="text-primary hover:underline"
+            className="text-foreground hover:underline font-semibold"
           >
             {isLogin
               ? "Don't have an account? Sign up"

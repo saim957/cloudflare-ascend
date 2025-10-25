@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img src={logo} alt="StrengthCloud" className="h-10 w-10 rounded-lg" />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+            <span className="text-xl font-bold text-foreground">
               StrengthCloud
             </span>
           </Link>
@@ -24,6 +24,14 @@ const Navbar = () => {
               Panel
             </a>
             <a 
+              href="https://status.strengthcloud.fun/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden md:block text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Status
+            </a>
+            <a 
               href="https://discord.gg/HPRE6yNMEp" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -32,7 +40,7 @@ const Navbar = () => {
               Discord
             </a>
             <Link to="/auth">
-              <Button variant="outline" className="border-primary/50 hover:border-primary hover:bg-primary/10">
+              <Button variant="outline" className="border-primary/20 hover:border-primary hover:bg-primary/10">
                 Login
               </Button>
             </Link>
