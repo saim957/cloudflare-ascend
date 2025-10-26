@@ -108,6 +108,15 @@ All colors MUST be HSL.
   .hover-glow:hover {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
   }
+  
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
 }
 
 @layer base {

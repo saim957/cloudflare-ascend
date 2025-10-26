@@ -8,6 +8,24 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,70,255,0.1),transparent)]" />
       
+      {/* Hero-specific snowfall */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0" style={{
+          background: `
+            radial-gradient(2px 2px at 20% 30%, white, transparent),
+            radial-gradient(2px 2px at 60% 70%, white, transparent),
+            radial-gradient(1px 1px at 50% 50%, white, transparent),
+            radial-gradient(1px 1px at 80% 10%, white, transparent),
+            radial-gradient(2px 2px at 90% 60%, white, transparent),
+            radial-gradient(1px 1px at 33% 80%, white, transparent),
+            radial-gradient(2px 2px at 15% 90%, white, transparent)
+          `,
+          backgroundSize: '200px 200px, 150px 150px, 180px 180px, 220px 220px, 160px 160px, 190px 190px, 210px 210px',
+          animation: 'snowfall 20s linear infinite',
+          opacity: 0.6
+        }} />
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/10 border border-foreground/20 text-sm text-foreground">
