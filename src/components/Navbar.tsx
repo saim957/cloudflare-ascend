@@ -19,28 +19,31 @@ const Navbar = () => {
               href="https://gp.strengthcloud.fun/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:block text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="hidden md:block relative text-sm text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover-glow group px-3 py-2"
             >
-              Panel
+              <span className="relative z-10">Panel</span>
+              <span className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 rounded transition-all duration-300"></span>
             </a>
             <a 
               href="https://status.strengthcloud.fun/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:block text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="hidden md:block relative text-sm text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover-glow group px-3 py-2"
             >
-              Status
+              <span className="relative z-10">Status</span>
+              <span className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 rounded transition-all duration-300"></span>
             </a>
             <a 
               href="https://discord.gg/HPRE6yNMEp" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:block text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="hidden md:block relative text-sm text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 hover-glow group px-3 py-2"
             >
-              Discord
+              <span className="relative z-10">Discord</span>
+              <span className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 rounded transition-all duration-300"></span>
             </a>
             <Link to="/auth">
-              <Button variant="outline" className="border-primary/20 hover:border-primary hover:bg-primary/10">
+              <Button variant="outline" className="border-primary/20 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover-lift">
                 Login
               </Button>
             </Link>

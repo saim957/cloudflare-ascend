@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const Pricing = () => {
   const minecraftPlans = [
@@ -191,7 +191,7 @@ const Pricing = () => {
             {minecraftPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-300 hover:scale-105 hover:border-foreground animate-scale-in ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift group ${
                   plan.popular 
                     ? "border-foreground shadow-2xl shadow-foreground/10 relative" 
                     : "border-border"
@@ -206,8 +206,8 @@ const Pricing = () => {
                 
                 <div className="mb-4">
                   <div className="text-xs text-muted-foreground mb-1">Minecraft Server</div>
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-1">
+                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1 mb-1 group-hover:scale-105 transition-transform duration-300">
                     <span className="text-4xl font-bold text-foreground">
                       {plan.price}
                     </span>
@@ -227,13 +227,17 @@ const Pricing = () => {
 
                 <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer" className="block">
                   <Button 
-                    className={`w-full ${
+                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn ${
                       plan.popular 
-                        ? "bg-foreground text-background hover:bg-foreground/90" 
+                        ? "bg-foreground text-background hover:bg-foreground/90 animate-pulse-glow" 
                         : "bg-foreground/10 hover:bg-foreground/20 text-foreground border-2 border-foreground/20 hover:border-foreground"
                     }`}
                   >
-                    Buy Now
+                    <span className="absolute inset-0 animate-shimmer"></span>
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Buy Now
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </Button>
                 </a>
               </Card>
@@ -248,7 +252,7 @@ const Pricing = () => {
             {vpsPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-300 hover:scale-105 hover:border-foreground animate-scale-in ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift group ${
                   plan.popular 
                     ? "border-foreground shadow-2xl shadow-foreground/10 relative" 
                     : "border-border"
@@ -263,8 +267,8 @@ const Pricing = () => {
                 
                 <div className="mb-4">
                   <div className="text-xs text-muted-foreground mb-1">Virtual Private Server</div>
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-1">
+                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1 mb-1 group-hover:scale-105 transition-transform duration-300">
                     <span className="text-4xl font-bold text-foreground">
                       {plan.price}
                     </span>
@@ -284,13 +288,17 @@ const Pricing = () => {
 
                 <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer" className="block">
                   <Button 
-                    className={`w-full ${
+                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn ${
                       plan.popular 
-                        ? "bg-foreground text-background hover:bg-foreground/90" 
+                        ? "bg-foreground text-background hover:bg-foreground/90 animate-pulse-glow" 
                         : "bg-foreground/10 hover:bg-foreground/20 text-foreground border-2 border-foreground/20 hover:border-foreground"
                     }`}
                   >
-                    Buy Now
+                    <span className="absolute inset-0 animate-shimmer"></span>
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Buy Now
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </Button>
                 </a>
               </Card>

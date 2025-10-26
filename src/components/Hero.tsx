@@ -32,17 +32,20 @@ const Hero = () => {
             <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="bg-foreground text-background hover:bg-foreground/90 transition-all group shadow-xl hover:shadow-foreground/20"
+                className="bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-xl hover:shadow-foreground/20 hover:scale-105 animate-pulse-glow relative overflow-hidden"
               >
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span className="absolute inset-0 animate-shimmer"></span>
+                <span className="relative z-10 flex items-center">
+                  Get Started
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
               </Button>
             </a>
             <a href="#pricing">
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-foreground/20 hover:border-foreground hover:bg-foreground/10"
+                className="border-foreground/20 hover:border-foreground hover:bg-foreground/10 transition-all duration-300 hover:scale-105 hover-lift"
               >
                 View Pricing
               </Button>

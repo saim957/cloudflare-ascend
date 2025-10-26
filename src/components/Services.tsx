@@ -40,14 +40,14 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="p-8 bg-card/50 backdrop-blur border-2 border-border hover:border-foreground transition-all duration-300 hover:scale-105 group animate-scale-in"
+              className="p-8 bg-card/50 backdrop-blur border-2 border-border hover:border-foreground transition-all duration-500 hover:scale-105 group animate-scale-in hover-lift cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 rounded-xl bg-foreground p-3 mb-6 group-hover:shadow-xl group-hover:shadow-foreground/30 transition-shadow">
+              <div className="w-16 h-16 rounded-xl bg-foreground p-3 mb-6 group-hover:shadow-xl group-hover:shadow-foreground/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <service.icon className="w-full h-full text-background" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground transition-all duration-300">{service.title}</h3>
+              <p className="text-muted-foreground group-hover:text-muted-foreground/80 transition-all duration-300">{service.description}</p>
             </Card>
           ))}
         </div>
@@ -56,10 +56,10 @@ const Services = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="text-center space-y-3 p-6 rounded-lg bg-muted/30 hover:bg-foreground/5 border border-border hover:border-foreground/20 transition-all animate-fade-up"
+              className="text-center space-y-3 p-6 rounded-lg bg-muted/30 hover:bg-foreground/5 border border-border hover:border-foreground/20 transition-all duration-300 animate-fade-up hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-foreground/10 p-2 mx-auto border border-foreground/20">
+              <div className="w-12 h-12 rounded-lg bg-foreground/10 p-2 mx-auto border border-foreground/20 hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-full h-full text-foreground" />
               </div>
               <h4 className="font-semibold">{feature.title}</h4>
