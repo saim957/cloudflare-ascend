@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,70,255,0.1),transparent)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background animate-gradient-x" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.15),transparent)] animate-pulse-glow" />
       
       {/* Hero-specific snowfall */}
       <div className="absolute inset-0 pointer-events-none">
@@ -33,24 +33,24 @@ const Hero = () => {
             <span>Premium Gaming Infrastructure</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in-up">
             <span className="text-foreground">
               Power Your Game
             </span>
             <br />
-            <span className="text-foreground border-b-4 border-foreground">With StrengthCloud</span>
+            <span className="text-gradient animate-text-shimmer border-b-4 border-foreground">With StrengthCloud</span>
           </h1>
           
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Experience lightning-fast Minecraft hosting and powerful VPS solutions. 
             Built for gamers, optimized for performance.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-xl hover:shadow-foreground/20 hover:scale-105 animate-pulse-glow relative overflow-hidden"
+                className="bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 group shadow-xl hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:scale-110 animate-pulse-glow relative overflow-hidden"
               >
                 <span className="absolute inset-0 animate-shimmer"></span>
                 <span className="relative z-10 flex items-center">
@@ -63,7 +63,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-foreground/20 hover:border-foreground hover:bg-foreground/10 transition-all duration-300 hover:scale-105 hover-lift"
+                className="border-foreground/20 hover:border-foreground hover:bg-foreground/10 transition-all duration-300 hover:scale-105 hover-lift hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
               >
                 View Pricing
               </Button>
@@ -72,16 +72,16 @@ const Hero = () => {
           
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12">
-            <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-foreground">99.9%</div>
+            <div className="space-y-2 animate-bounce-in" style={{ animationDelay: '0.6s' }}>
+              <div className="text-3xl md:text-4xl font-bold text-gradient animate-text-shimmer">99.9%</div>
               <div className="text-sm text-muted-foreground">Uptime</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-foreground">24/7</div>
+            <div className="space-y-2 animate-bounce-in" style={{ animationDelay: '0.8s' }}>
+              <div className="text-3xl md:text-4xl font-bold text-gradient animate-text-shimmer">24/7</div>
               <div className="text-sm text-muted-foreground">Support</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold text-foreground">DDoS</div>
+            <div className="space-y-2 animate-bounce-in" style={{ animationDelay: '1s' }}>
+              <div className="text-3xl md:text-4xl font-bold text-gradient animate-text-shimmer">DDoS</div>
               <div className="text-sm text-muted-foreground">Protected</div>
             </div>
           </div>

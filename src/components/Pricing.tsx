@@ -175,28 +175,30 @@ const Pricing = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 space-y-4 animate-fade-in">
+        <div className="text-center mb-16 space-y-4 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Simple <span className="text-foreground border-b-4 border-foreground">Pricing</span>
+            Simple <span className="text-gradient animate-text-shimmer border-b-4 border-foreground">Pricing</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Transparent pricing with no hidden fees. Scale as you grow.
           </p>
         </div>
 
         {/* Minecraft Hosting Plans */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-8 text-center">Minecraft Hosting</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <span className="text-gradient animate-text-shimmer">Minecraft Hosting</span>
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {minecraftPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift group ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] ${
                   plan.popular 
-                    ? "border-foreground shadow-2xl shadow-foreground/10 relative" 
+                    ? "border-foreground shadow-2xl shadow-foreground/10 relative animate-pulse-glow" 
                     : "border-border"
                 }`}
-                style={{ animationDelay: `${index * 0.05}s` }}
+                style={{ animationDelay: `${index * 0.05 + 0.4}s` }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-foreground text-background rounded-full text-xs font-bold">
@@ -206,9 +208,9 @@ const Pricing = () => {
                 
                 <div className="mb-4">
                   <div className="text-xs text-muted-foreground mb-1">Minecraft Server</div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 group-hover:text-gradient transition-all duration-300">{plan.name}</h3>
                   <div className="flex items-baseline gap-1 mb-1 group-hover:scale-105 transition-transform duration-300">
-                    <span className="text-4xl font-bold text-foreground">
+                    <span className="text-4xl font-bold text-gradient animate-text-shimmer">
                       {plan.price}
                     </span>
                     <span className="text-muted-foreground">/month</span>
@@ -227,7 +229,7 @@ const Pricing = () => {
 
                 <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer" className="block">
                   <Button 
-                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn ${
+                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] group/btn ${
                       plan.popular 
                         ? "bg-foreground text-background hover:bg-foreground/90 animate-pulse-glow" 
                         : "bg-foreground/10 hover:bg-foreground/20 text-foreground border-2 border-foreground/20 hover:border-foreground"
@@ -236,7 +238,7 @@ const Pricing = () => {
                     <span className="absolute inset-0 animate-shimmer"></span>
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Buy Now
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                     </span>
                   </Button>
                 </a>
@@ -247,17 +249,19 @@ const Pricing = () => {
 
         {/* VPS Plans */}
         <div>
-          <h3 className="text-3xl font-bold mb-8 text-center">VPS Hosting</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <span className="text-gradient animate-text-shimmer">VPS Hosting</span>
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {vpsPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift group ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] ${
                   plan.popular 
-                    ? "border-foreground shadow-2xl shadow-foreground/10 relative" 
+                    ? "border-foreground shadow-2xl shadow-foreground/10 relative animate-pulse-glow" 
                     : "border-border"
                 }`}
-                style={{ animationDelay: `${index * 0.05 + 0.3}s` }}
+                style={{ animationDelay: `${index * 0.05 + 0.7}s` }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-foreground text-background rounded-full text-xs font-bold">
@@ -267,9 +271,9 @@ const Pricing = () => {
                 
                 <div className="mb-4">
                   <div className="text-xs text-muted-foreground mb-1">Virtual Private Server</div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 transition-transform duration-300">{plan.name}</h3>
+                  <h3 className="text-xl font-bold mb-2 group-hover:scale-105 group-hover:text-gradient transition-all duration-300">{plan.name}</h3>
                   <div className="flex items-baseline gap-1 mb-1 group-hover:scale-105 transition-transform duration-300">
-                    <span className="text-4xl font-bold text-foreground">
+                    <span className="text-4xl font-bold text-gradient animate-text-shimmer">
                       {plan.price}
                     </span>
                     <span className="text-muted-foreground">/month</span>
@@ -288,7 +292,7 @@ const Pricing = () => {
 
                 <a href="https://discord.gg/HPRE6yNMEp" target="_blank" rel="noopener noreferrer" className="block">
                   <Button 
-                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg group/btn ${
+                    className={`w-full relative overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] group/btn ${
                       plan.popular 
                         ? "bg-foreground text-background hover:bg-foreground/90 animate-pulse-glow" 
                         : "bg-foreground/10 hover:bg-foreground/20 text-foreground border-2 border-foreground/20 hover:border-foreground"
@@ -297,7 +301,7 @@ const Pricing = () => {
                     <span className="absolute inset-0 animate-shimmer"></span>
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Buy Now
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                     </span>
                   </Button>
                 </a>
