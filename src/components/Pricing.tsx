@@ -171,8 +171,16 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 relative">
+    <section id="pricing" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
+      
+      {/* Colorful accent lines */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-pink-500" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500" />
+      
+      {/* Floating colored orbs */}
+      <div className="absolute top-40 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-40 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
@@ -193,17 +201,20 @@ const Pricing = () => {
             {minecraftPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-primary animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] relative overflow-hidden ${
                   plan.popular 
-                    ? "border-foreground shadow-2xl shadow-foreground/10 relative animate-pulse-glow" 
+                    ? "border-primary shadow-2xl shadow-primary/20 animate-pulse-glow bg-gradient-to-br from-card to-purple-950/20" 
                     : "border-border"
                 }`}
                 style={{ animationDelay: `${index * 0.05 + 0.4}s` }}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-foreground text-background rounded-full text-xs font-bold">
-                    MOST POPULAR
-                  </div>
+                  <>
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-full text-xs font-bold shadow-lg shadow-primary/50">
+                      MOST POPULAR
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
+                  </>
                 )}
                 
                 <div className="mb-4">
@@ -256,17 +267,20 @@ const Pricing = () => {
             {vpsPlans.map((plan, index) => (
               <Card 
                 key={index}
-                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-foreground animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] ${
+                className={`p-6 bg-card/50 backdrop-blur border-2 transition-all duration-500 hover:scale-105 hover:border-primary animate-scale-in hover-lift hover-tilt group hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] relative overflow-hidden ${
                   plan.popular 
-                    ? "border-foreground shadow-2xl shadow-foreground/10 relative animate-pulse-glow" 
+                    ? "border-primary shadow-2xl shadow-primary/20 animate-pulse-glow bg-gradient-to-br from-card to-purple-950/20" 
                     : "border-border"
                 }`}
                 style={{ animationDelay: `${index * 0.05 + 0.7}s` }}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-foreground text-background rounded-full text-xs font-bold">
-                    MOST POPULAR
-                  </div>
+                  <>
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-full text-xs font-bold shadow-lg shadow-primary/50">
+                      MOST POPULAR
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
+                  </>
                 )}
                 
                 <div className="mb-4">

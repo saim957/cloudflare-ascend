@@ -23,8 +23,13 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-card to-background" />
+      
+      {/* Floating colored orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
@@ -40,12 +45,15 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="p-8 bg-card/50 backdrop-blur border-2 border-border hover:border-foreground transition-all duration-500 hover:scale-105 group animate-scale-in hover-lift hover-tilt cursor-pointer hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] animate-fade-in-up"
+              className="p-8 bg-card/50 backdrop-blur border-2 border-border hover:border-primary transition-all duration-500 hover:scale-105 group animate-scale-in hover-lift hover-tilt cursor-pointer hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] animate-fade-in-up relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 rounded-xl bg-foreground p-3 mb-6 group-hover:shadow-xl group-hover:shadow-foreground/30 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-float">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 p-3 mb-6 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-float">
                 <service.icon className="w-full h-full text-background" />
               </div>
+              
+              {/* Accent bar */}
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-pink-500 group-hover:w-full transition-all duration-500" />
               <h3 className="text-2xl font-bold mb-3 group-hover:text-gradient transition-all duration-300">{service.title}</h3>
               <p className="text-muted-foreground group-hover:text-muted-foreground/80 transition-all duration-300">{service.description}</p>
             </Card>

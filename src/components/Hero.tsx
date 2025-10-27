@@ -4,9 +4,14 @@ import { ArrowRight, Zap } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background animate-gradient-x" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.15),transparent)] animate-pulse-glow" />
+      {/* Multi-color animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(220,30%,5%)] via-[hsl(250,40%,10%)] to-[hsl(270,30%,8%)] animate-gradient-x" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(147,51,234,0.2),transparent_50%)] animate-pulse" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(6,182,212,0.2),transparent_50%)] animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(236,72,153,0.15),transparent_50%)] animate-pulse" style={{ animationDelay: '2s' }} />
+      
+      {/* Animated grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
       
       {/* Hero-specific snowfall */}
       <div className="absolute inset-0 pointer-events-none">
