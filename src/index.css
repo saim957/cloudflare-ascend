@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 30% 5%;
+    --background: 240 35% 8%;
     --foreground: 0 0% 100%;
 
-    --card: 220 25% 8%;
+    --card: 240 30% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 25% 8%;
+    --popover: 240 30% 12%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 270 100% 65%;
@@ -25,8 +25,8 @@ All colors MUST be HSL.
     --secondary: 190 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 240 25% 18%;
+    --muted-foreground: 0 0% 65%;
 
     --accent: 320 100% 60%;
     --accent-foreground: 0 0% 100%;
@@ -34,8 +34,8 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
+    --border: 240 20% 22%;
+    --input: 240 20% 22%;
     --ring: 270 100% 65%;
 
     --radius: 0.75rem;
@@ -175,6 +175,39 @@ All colors MUST be HSL.
     }
   }
   
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes rotate-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+      transform: rotate(0deg);
+    }
+    50% {
+      filter: drop-shadow(0 0 40px hsl(var(--secondary) / 0.5));
+      transform: rotate(180deg);
+    }
+  }
+  
   .animate-gradient-x {
     animation: gradient-x 8s ease infinite;
     background-size: 200% 200%;
@@ -198,6 +231,18 @@ All colors MUST be HSL.
     animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out forwards;
+  }
+  
+  .animate-rotate-glow {
+    animation: rotate-glow 10s ease-in-out infinite;
+  }
+  
   .hover-tilt {
     transition: transform 0.3s ease;
   }
@@ -219,7 +264,18 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease;
+  }
+  
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
   }
 }
